@@ -12,6 +12,7 @@ app.use(express.json());
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
+app.get("/", (req, res) => res.send("Server is running!"));
 
 app.post('/api/chat', async (req, res) => {
     const { ingredients } = req.body;
